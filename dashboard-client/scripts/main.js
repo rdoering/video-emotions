@@ -4,6 +4,10 @@ var SESSIONS_ENDPOINT = "http://localhost:8091/api/sessions";
 
 var SCORE_TYPES = ["anger", "contempt", "disgust", "fear", "happiness", "neutral", "sadness", "surprise"];
 
+var REFRESH_INTERVAL_IN_SECONDS = 5;
+
+setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
+
 function init(){
     d3.json(SESSIONS_ENDPOINT, function (error, data) {
         if (error)
