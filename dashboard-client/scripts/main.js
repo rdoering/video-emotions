@@ -63,7 +63,9 @@ function appendBenchmark(sessionDivs){
             .classed("benchmark", true)
             .text(function(d){
                 /* plot benchmark here! (but maybe calculate somewhere else?) */
-                return Math.round(Math.random()*9) //rand number between 0-9;
+                var hash = text2hashcode(i+JSON.stringify(this));
+                var lastDigitOfHash = hash.toString().slice(-1); //should be a stable but random number between 0-9;
+                return lastDigitOfHash;
             });
     });
 }
@@ -264,4 +266,20 @@ function aggregateEmotions(emotionSets){
             });
         });
     });
+}
+
+/**
+ * http://erlycoder.com/49/javascript-hash-functions-to-convert-string-into-integer-hash-
+ * @param str
+ * @returns {number}
+ */
+function text2hashcode(str){
+    var hash = 0;
+    if (str.length == 0) return hash;
+    for (i = 0; i < str.length; i++) {
+        char = str.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
 }
