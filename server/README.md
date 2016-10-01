@@ -14,8 +14,10 @@ time
 
 (used by dashboard-client)
 
-## build
-`dart build thingy`
+## prepare
+`brew tap dart-lang/dart`
+`brew install dart`
+`pub get`
 
 ## start
-`dart start thingy`
+`dart bin/server.dart`

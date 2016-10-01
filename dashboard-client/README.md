@@ -2,6 +2,7 @@
 contains dashboard client as simple html/js page
 
 ## prepare
+`brew install npm`
 `npm install http-server -g`
 
 ## start
