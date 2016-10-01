@@ -9,15 +9,17 @@ var REFRESH_INTERVAL_IN_SECONDS = 5;
 /**
  * refresh the whole dashboard
  */
-//setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
+setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
 
 /**
  * called via body-onload and interval
  */
 function init(){
     d3.json(SESSIONS_ENDPOINT, function (error, sessionsResponse) {
-        if (error)
+        if (error){
+            console.error("unable to reach "+SESSIONS_ENDPOINT+ " server started already?");
             throw error;
+        }
 
         d3.select("#sessions").selectAll(".session").remove();
         appendSessionDivs(sessionsResponse.sessions);
