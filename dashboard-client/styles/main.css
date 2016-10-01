@@ -1,3 +1,39 @@
+.headline .startAt{
+    font-weight: bold;
+}
+
+/* use ColorBrewer to find great colors!
+ * http://colorbrewer2.org/#type=qualitative&scheme=Accent&n=8
+ */
+path{
+    fill:none;
+    stroke-width: 2px;
+}
+path.anger{
+    stroke: #7fc97f;
+}
+path.contempt{
+    stroke: #beaed4;
+}
+path.disgust{
+    stroke: #fdc086;
+}
+path.fear{
+    stroke: #ffff99;
+}
+path.happiness{
+    stroke: #386cb0;
+}
+path.neutral{
+    stroke: #f0027f;
+}
+path.sadness{
+    stroke: #bf5b17;
+}
+path.surprise{
+    stroke: #666666;
+}
+
 .axis--x path {
     display: none;
 }
