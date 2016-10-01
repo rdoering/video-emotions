@@ -44,9 +44,7 @@ function appendSessionHeadline(sessionDivs){
 }
 
 function appendSessionChart(sessionDivs){
-    console.log(sessionDivs);
     sessionDivs.each(function(sessionData, i){
-        console.log("sessionData", sessionData);
 
         var svg = d3.select(this).append("svg").attr("width",900).attr("height",150);
         var margin = {top: 20, right: 80, bottom: 30, left: 50};
@@ -133,8 +131,6 @@ function appendSessionChart(sessionDivs){
 
         /* from now on: focus on aggregated emotions (sum of all people per time) */
         aggregateEmotions(sessionData.emotionSet);
-
-        console.log("after aggregateEmotions", sessionData.emotionSet);
 
         x.domain(d3.extent(sessionData.emotionSet, function (d) {
             return Date.parse(d.emotionsAt);
