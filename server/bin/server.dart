@@ -7,6 +7,7 @@ import 'package:args/args.dart';
 import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_cors/shelf_cors.dart' as cors;
+import 'package:shelf_route/shelf_route.dart';
 
 void main(List<String> args) {
   var parser = new ArgParser()
@@ -19,10 +20,25 @@ void main(List<String> args) {
     exit(1);
   });
 
+  Router primaryRouter = router();
+  Router api = primaryRouter.child('/api');
+
+  api.post('/user', (shelf.Request request) async {
+    return new shelf.Response.ok('Success!' + await request.readAsString() );
+  });
+
+  api.get('/user/{name}/{id}', (shelf.Request request) {
+    var id = getPathParameter(request, 'id');
+    var name = getPathParameter(request, 'name');
+    return new shelf.Response.ok('Success! Found: ' + id + ' ' + name );
+  });
+
+
   var handler = const shelf.Pipeline()
       .addMiddleware(shelf.logRequests())
       .addMiddleware(cors.createCorsHeadersMiddleware())
-      .addHandler(_echoRequest);
+      .addHandler(primaryRouter.handler);
+      //.addHandler(_echoRequest);
 
   io.serve(handler, '0.0.0.0', port).then((server) {
     print('Serving at http://${server.address.host}:${server.port}');
