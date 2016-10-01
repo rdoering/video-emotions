@@ -6,15 +6,21 @@ var SCORE_TYPES = ["anger", "contempt", "disgust", "fear", "happiness", "neutral
 
 var REFRESH_INTERVAL_IN_SECONDS = 5;
 
-setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
+/**
+ * refresh the whole dashboard
+ */
+//setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
 
+/**
+ * called via body-onload and interval
+ */
 function init(){
-    d3.json(SESSIONS_ENDPOINT, function (error, data) {
+    d3.json(SESSIONS_ENDPOINT, function (error, sessionsResponse) {
         if (error)
             throw error;
 
         d3.select("#sessions").selectAll(".session").remove();
-        appendSessionDivs(data.sessions);
+        appendSessionDivs(sessionsResponse.sessions);
     });
 }
 
@@ -25,6 +31,7 @@ function appendSessionDivs(sessions) {
         .classed("session", true);
 
     appendSessionHeadline(sessionDivs);
+    appendBenchmark(sessionDivs);
     appendSessionChart(sessionDivs);
     appendLegend(sessionDivs);
 }
@@ -46,6 +53,17 @@ function appendSessionHeadline(sessionDivs){
         var durationInMinutes = Math.round(durationInMillis / 1000 / 60);
         headlineP.append("span").classed("duration", true).text(" ~"+durationInMinutes+ "min");
     })
+}
+
+function appendBenchmark(sessionDivs){
+    sessionDivs.each(function(sessionData, i){
+        d3.select(this).append("span")
+            .classed("benchmark", true)
+            .text(function(d){
+                //plot benchmark here! (but maybe calculate somewhere else?)
+                return Math.round(Math.random()*9) //rand number between 0-9;
+            });
+    });
 }
 
 function appendSessionChart(sessionDivs){

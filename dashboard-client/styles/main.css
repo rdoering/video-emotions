@@ -2,6 +2,14 @@
     font-weight: bold;
 }
 
+.headline{
+    margin: 30px 0 0;
+}
+
+.benchmark{
+    font-size: 130pt;
+}
+
 /* use ColorBrewer to find great colors!
  * http://colorbrewer2.org/#type=qualitative&scheme=Accent&n=8
  */
