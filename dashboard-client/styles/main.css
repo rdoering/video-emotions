@@ -5,35 +5,39 @@
 /* use ColorBrewer to find great colors!
  * http://colorbrewer2.org/#type=qualitative&scheme=Accent&n=8
  */
-path{
+path, line{
     fill:none;
     stroke-width: 2px;
 }
-path.anger{
+path.anger, line.anger{
     stroke: #7fc97f;
 }
-path.contempt{
+path.contempt, line.contempt{
     stroke: #beaed4;
 }
-path.disgust{
+path.disgust, line.disgust{
     stroke: #fdc086;
 }
-path.fear{
-    stroke: #ffff99;
-}
-path.happiness{
-    stroke: #386cb0;
-}
-path.neutral{
+path.fear, line.fear{
     stroke: #f0027f;
 }
-path.sadness{
+path.happiness, line.happiness{
+    stroke: #386cb0;
+}
+path.neutral, line.neutral{
+    stroke: #ffff99;
+}
+path.sadness, line.sadness{
     stroke: #bf5b17;
 }
-path.surprise{
+path.surprise, line.surprise{
     stroke: #666666;
 }
 
+.legend text{
+    font-size: 12px;
+    vertical-align: middle;
+}
 .axis--x path {
     display: none;
 }

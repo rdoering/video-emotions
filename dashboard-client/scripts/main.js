@@ -22,6 +22,7 @@ function appendSessionDivs(sessions) {
 
     appendSessionHeadline(sessionDivs);
     appendSessionChart(sessionDivs);
+    appendLegend(sessionDivs);
 }
 
 function appendSessionHeadline(sessionDivs){
@@ -182,6 +183,50 @@ function appendSessionChart(sessionDivs){
                 });
         });
 
+
+    });
+}
+
+function appendLegend(sessionDivs){
+    sessionDivs.each(function() {
+
+        var width = 150;
+        var height = 130;
+        var legendBuffer = 10;
+
+        var svg = d3.select(this)
+            .append("svg")
+            .attr("width",width)
+            .attr("height",height+legendBuffer)
+            .classed("legend", true);
+
+        var lineLength = 20;
+        var verticalOffset = (height)/(SCORE_TYPES.length+1);
+
+        svg.append("text")
+            .classed("legend", true)
+            .attr("x", 0)
+            .attr("y", legendBuffer+(verticalOffset/4))
+            .style("font-size", verticalOffset+"px")
+            .style("font-weight", "bold")
+            .text("Legend");
+
+        SCORE_TYPES.forEach(function (scoreType, i){
+            var offset = (i+1)*verticalOffset;
+            svg.append("line")
+                .classed(scoreType, true)
+                .attr("x1", 0)
+                .attr("x2", lineLength)
+                .attr("y1", legendBuffer+offset)
+                .attr("y2", legendBuffer+offset);
+
+            svg.append("text")
+                .classed(scoreType, true)
+                .attr("x", lineLength+5)
+                .attr("y", legendBuffer+offset+(verticalOffset/4))
+                .style("font-size", verticalOffset+"px")
+                .text(scoreType);
+        });
 
     });
 }
