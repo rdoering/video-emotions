@@ -31,7 +31,7 @@ function appendSessionHeadline(sessionDivs){
         /* start time */
         var startAt = d3.min(sessionData.emotionSet, function(emotionSet){ return emotionSet.emotionsAt});
         var startAtAsDate = new Date(Date.parse(startAt));
-        var startAtDateReadable = startAtAsDate.toDateString()
+        var startAtDateReadable = startAtAsDate.toDateString();
         var startAtTimeReadable = startAtAsDate.getHours()+":"+startAtAsDate.getMinutes();
         headlineP.append("span").classed("startAt", true).text(startAtDateReadable +" "+startAtTimeReadable);
 
@@ -48,8 +48,8 @@ function appendSessionChart(sessionDivs){
 
         var svg = d3.select(this).append("svg").attr("width",900).attr("height",150);
         var margin = {top: 20, right: 80, bottom: 30, left: 50};
-        var width = svg.attr("width") - margin.left - margin.right
-        var height = svg.attr("height") - margin.top - margin.bottom
+        var width = svg.attr("width") - margin.left - margin.right;
+        var height = svg.attr("height") - margin.top - margin.bottom;
         var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var x = d3.scaleTime().range([0, width]);
