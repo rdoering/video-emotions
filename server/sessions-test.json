@@ -4,7 +4,7 @@
       "sessionId": "sessionId-1",
       "emotionSet": [
         {
-          "emotionsAt": "2016-10-01T14:50:00T",
+          "emotionsAt": "2016-10-01T14:50:00Z",
           "emotions": [
             {
               "faceRectangle": {
@@ -99,7 +99,7 @@
           ]
         },
         {
-          "emotionsAt": "2016-10-01T14:50:05T",
+          "emotionsAt": "2016-10-01T14:50:05Z",
           "emotions": [
             {
               "faceRectangle": {
@@ -194,7 +194,7 @@
           ]
         },
         {
-          "emotionsAt": "2016-10-01T14:50:10T",
+          "emotionsAt": "2016-10-01T14:50:10Z",
           "emotions": [
             {
               "faceRectangle": {
@@ -294,7 +294,7 @@
       "sessionId": "sessionId-2",
       "emotionSet": [
         {
-          "emotionsAt": "2016-10-01T14:50:00T",
+          "emotionsAt": "2016-10-01T14:50:00Z",
           "emotions": [
             {
               "faceRectangle": {
@@ -389,7 +389,7 @@
           ]
         },
         {
-          "emotionsAt": "2016-10-01T14:50:05T",
+          "emotionsAt": "2016-10-01T14:50:05Z",
           "emotions": [
             {
               "faceRectangle": {
@@ -484,7 +484,7 @@
           ]
         },
         {
-          "emotionsAt": "2016-10-01T14:50:10T",
+          "emotionsAt": "2016-10-01T14:50:10Z",
           "emotions": [
             {
               "faceRectangle": {
