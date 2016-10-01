@@ -8,6 +8,7 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_cors/shelf_cors.dart' as cors;
 import 'package:shelf_route/shelf_route.dart';
+import 'dart:io';
 
 void main(List<String> args) {
   var parser = new ArgParser()
@@ -34,17 +35,24 @@ void main(List<String> args) {
   });
 
 
+api.get('/sessions', (shelf.Request request) {
+
+    var path = 'sessions-test.json';
+    Directory pwd = Directory.current;
+    print("PWD: " + pwd.path);
+    print(path);
+    File file = new File(path);
+    var fileContent = file.readAsStringSync();
+    return new shelf.Response.ok(fileContent);
+  });
+
+
   var handler = const shelf.Pipeline()
       .addMiddleware(shelf.logRequests())
       .addMiddleware(cors.createCorsHeadersMiddleware())
       .addHandler(primaryRouter.handler);
-      //.addHandler(_echoRequest);
 
   io.serve(handler, '0.0.0.0', port).then((server) {
     print('Serving at http://${server.address.host}:${server.port}');
   });
-}
-
-shelf.Response _echoRequest(shelf.Request request) {
-  return new shelf.Response.ok('Request for "${request.url}"');
 }
