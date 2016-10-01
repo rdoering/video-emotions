@@ -8,6 +8,13 @@ image (request body)
 sessionId
 time
 
+
+{
+  sessionId:"",
+  time:"ISO8001",
+  image:"Base64"
+}
+
 (used by recording-client)
 
 ### GET /api/sessions
