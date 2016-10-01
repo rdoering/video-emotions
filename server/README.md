@@ -3,14 +3,14 @@ contains back-end stack client as Dart
 
 ## HTTP endpoints
 
-### PUT /image
+### PUT /apit/image
 image (request body)
 sessionId
 time
 
 (used by recording-client)
 
-### GET /sessions
+### GET /api/sessions
 
 (used by dashboard-client)
 
