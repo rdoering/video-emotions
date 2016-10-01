@@ -24,6 +24,8 @@ time
 ## prepare
 `brew tap dart-lang/dart`
 `brew install dart`
+
+## build
 `pub get`
 
 ## start
