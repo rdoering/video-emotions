@@ -1,0 +1,584 @@
+{
+  "sessions": [
+    {
+      "session": "sessionId-1",
+      "emotionSet": [
+        {
+          "emotionsAt": "2016-10-01T14:50:00T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        },
+        {
+          "emotionsAt": "2016-10-01T14:50:05T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        },
+        {
+          "emotionsAt": "2016-10-01T14:50:10T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "session": "sessionId-2",
+      "emotionSet": [
+        {
+          "emotionsAt": "2016-10-01T14:50:00T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        },
+        {
+          "emotionsAt": "2016-10-01T14:50:05T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        },
+        {
+          "emotionsAt": "2016-10-01T14:50:10T",
+          "emotions": [
+            {
+              "faceRectangle": {
+                "left": 488,
+                "top": 263,
+                "width": 148,
+                "height": 148
+              },
+              "scores": {
+                "anger": 9.075572e-13,
+                "contempt": 7.048959e-9,
+                "disgust": 1.02152783e-11,
+                "fear": 1.778957e-14,
+                "happiness": 0.9999999,
+                "neutral": 1.31694478e-7,
+                "sadness": 6.04054263e-12,
+                "surprise": 3.92249462e-11
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 153,
+                "top": 251,
+                "width": 133,
+                "height": 133
+              },
+              "scores": {
+                "anger": 6.2065344e-9,
+                "contempt": 1.08080636e-11,
+                "disgust": 3.30821842e-10,
+                "fear": 1.02974018e-11,
+                "happiness": 1,
+                "neutral": 1.2882297e-8,
+                "sadness": 2.63420341e-10,
+                "surprise": 4.30664e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 762,
+                "top": 325,
+                "width": 123,
+                "height": 123
+              },
+              "scores": {
+                "anger": 0.00019452213,
+                "contempt": 0.000333736039,
+                "disgust": 0.000693641952,
+                "fear": 0.00000172743637,
+                "happiness": 0.9509745,
+                "neutral": 0.04753512,
+                "sadness": 0.000177138063,
+                "surprise": 0.00008960857
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 1065,
+                "top": 270,
+                "width": 99,
+                "height": 99
+              },
+              "scores": {
+                "anger": 3.784958e-9,
+                "contempt": 2.17644625e-10,
+                "disgust": 8.470069e-9,
+                "fear": 1.8734023e-11,
+                "happiness": 0.99999994,
+                "neutral": 2.52160586e-8,
+                "sadness": 3.50126363e-8,
+                "surprise": 1.243408e-10
+              }
+            },
+            {
+              "faceRectangle": {
+                "left": 900,
+                "top": 356,
+                "width": 69,
+                "height": 69
+              },
+              "scores": {
+                "anger": 1.61575272e-7,
+                "contempt": 0.000004247503,
+                "disgust": 2.36979556e-8,
+                "fear": 6.178071e-8,
+                "happiness": 0.9946751,
+                "neutral": 0.00531783467,
+                "sadness": 0.00000216178728,
+                "surprise": 4.332052e-7
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
