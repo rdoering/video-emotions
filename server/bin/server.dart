@@ -8,7 +8,10 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_cors/shelf_cors.dart' as cors;
 import 'package:shelf_route/shelf_route.dart';
+//import 'dart:html' as html;
 import 'dart:io';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main(List<String> args) {
   var parser = new ArgParser()
@@ -24,8 +27,33 @@ void main(List<String> args) {
   Router primaryRouter = router();
   Router api = primaryRouter.child('/api');
 
-  api.post('/user', (shelf.Request request) async {
-    return new shelf.Response.ok('Success!' + await request.readAsString() );
+  api.post('/image', (shelf.Request request) async {
+
+    Map requestBody = await request.readAsString().then((String body) {
+      return body.isNotEmpty ? JSON.decode(body) : {};
+    });
+
+    String sessionId = requestBody['sessionId'];
+    String time = requestBody['time'];
+    String fileBase64Encoded = requestBody["image"];
+
+    var file = BASE64.decode(fileBase64Encoded);
+
+    var msUrl = "https://api.projectoxford.ai/emotion/v1.0/recognize";
+
+    var header = {
+      "Content-Type": "application/octet-stream",
+      "Ocp-Apim-Subscription-Key": "3540bced93c14791b5aa56bfa07f4278"
+    };
+    String msResonse = "{}";
+    int msResponseCode;
+    await http.post(msUrl, headers: header, body: file)
+        .then((response) {
+      msResonse = response.body;
+      msResponseCode = response.statusCode;
+    });
+
+    return new shelf.Response.ok(msResonse);
   });
 
   api.get('/user/{name}/{id}', (shelf.Request request) {
@@ -55,4 +83,9 @@ api.get('/sessions', (shelf.Request request) {
   io.serve(handler, '0.0.0.0', port).then((server) {
     print('Serving at http://${server.address.host}:${server.port}');
   });
+}
+
+void onDataLoaded(HttpClientResponse response) {
+  var jsonString = response.bo();
+  print(jsonString);
 }
