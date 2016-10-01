@@ -1,7 +1,7 @@
 {
   "sessions": [
     {
-      "session": "sessionId-1",
+      "sessionId": "sessionId-1",
       "emotionSet": [
         {
           "emotionsAt": "2016-10-01T14:50:00T",
@@ -291,7 +291,7 @@
       ]
     },
     {
-      "session": "sessionId-2",
+      "sessionId": "sessionId-2",
       "emotionSet": [
         {
           "emotionsAt": "2016-10-01T14:50:00T",
