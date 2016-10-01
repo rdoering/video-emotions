@@ -1,6 +1,6 @@
 
-/* change to http://localhost:8090/sessions */
-var SESSIONS_ENDPOINT = "sessions-test.json";
+/* change to sessions-test.json if needed */
+var SESSIONS_ENDPOINT = "http://localhost:8091/api/sessions";
 
 var SCORE_TYPES = ["anger", "contempt", "disgust", "fear", "happiness", "neutral", "sadness", "surprise"];
 
