@@ -1,8 +1,8 @@
 # Video Emotions dashboard-client
 contains dashboard client as simple html/js page
 
-## build
-`npm install`
+## prepare
+`npm install http-server -g`
 
 ## start
-`npm start`
+`http-server . -p 8081`
