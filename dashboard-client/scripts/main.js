@@ -60,7 +60,7 @@ function appendBenchmark(sessionDivs){
         d3.select(this).append("span")
             .classed("benchmark", true)
             .text(function(d){
-                //plot benchmark here! (but maybe calculate somewhere else?)
+                /* plot benchmark here! (but maybe calculate somewhere else?) */
                 return Math.round(Math.random()*9) //rand number between 0-9;
             });
     });
