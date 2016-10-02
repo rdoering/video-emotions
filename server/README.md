@@ -24,9 +24,11 @@ time
 ## prepare
 `brew tap dart-lang/dart`
 `brew install dart`
+`docker run --name some-mongo -p"27017:27017" -d mongo`
 
 ## build
 `pub get`
 
 ## start
+`docker start some-mongo`
 `dart bin/server.dart`
