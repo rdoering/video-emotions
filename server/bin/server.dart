@@ -64,16 +64,28 @@ void main(List<String> args) {
 
       var msResponseMap = JSON.decode(msResonse);
 
-      Map entry = {
-        'sessionId': sessionId,
-        'emotionSet': [{
+      Map existingEntry = await collection.findOne({"sessionId" : sessionId});
+      if (existingEntry == null || existingEntry.length < 1) {
+        print("Add new Entry");
+        Map entry = {
+          'sessionId': sessionId,
+          'emotionSet': [{
+            'emotionsAt': time,
+            'emotions': msResponseMap
+          }]
+        };
+        collection.insert(entry);
+      } else {
+        print("Update existing Entry");
+        existingEntry["emotionSet"].add({
           'emotionsAt': time,
           'emotions': msResponseMap
-        }]
-      };
-      collection.insert(entry);
+        });
+        await collection.save(existingEntry);
+      }
 
-      database.close();
+
+
     }
 
     return new shelf.Response.ok(msResonse);
@@ -115,24 +127,6 @@ void main(List<String> args) {
     return new shelf.Response.ok(JSON.encode(result));
   });
 
-  /*api.get('/sessions', (shelf.Request request) {
-
-    DbConfigValues config = new DbConfigValues();
-    Db database = new Db(config.dbURI + config.dbName);
-    await database.open();
-  DbCollection collection = new DbCollection(database, config.collectionName);
-
-
-  var path = 'sessions-test.json';
-    Directory pwd = Directory.current;
-    print("PWD: " + pwd.path);
-    print(path);
-    File file = new File(path);
-    var fileContent = file.readAsStringSync();
-    return new shelf.Response.ok(fileContent);
-  });*/
-
-
   var handler = const shelf.Pipeline()
       .addMiddleware(shelf.logRequests())
       .addMiddleware(cors.createCorsHeadersMiddleware())
@@ -141,9 +135,4 @@ void main(List<String> args) {
   io.serve(handler, '0.0.0.0', port).then((server) {
     print('Serving at http://${server.address.host}:${server.port}');
   });
-}
-
-void onDataLoaded(HttpClientResponse response) {
-  var jsonString = response.bo();
-  print(jsonString);
 }
