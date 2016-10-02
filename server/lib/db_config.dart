@@ -2,7 +2,7 @@
 class DbConfigValues {
   String dbName = 'videoemo';
   String collectionName = 'sessions';
-  String dbURI = 'mongodb://127.0.0.1/';
+  String dbURI = 'mongodb://127.0.0.1:27017/';
   int dbSize = 10;
   String get testDbName => dbName + "-test";
   String get testDbURI => dbURI;
