@@ -84,7 +84,7 @@ void main(List<String> args) {
   });
 
 
-  api.get('/sessions', (shelf.Request request) {
+  api.get('/sessions-demo', (shelf.Request request) {
 
     var path = 'sessions-test.json';
     Directory pwd = Directory.current;
@@ -94,22 +94,13 @@ void main(List<String> args) {
     return new shelf.Response.ok(fileContent);
   });
 
-  api.get('/sessions2', (shelf.Request request) {
-
+  api.get('/sessions', (shelf.Request request) {
     DbConfigValues config = new DbConfigValues();
     Db database = new Db(config.dbURI + config.dbName);
     database.open();
     DbCollection collection = new DbCollection(database, config.collectionName);
-    var allSessions = collection.find('{}');
-
-
-    var path = 'sessions-test.json';
-    Directory pwd = Directory.current;
-    print("PWD: " + pwd.path);
-    print(path);
-    File file = new File(path);
-    var fileContent = file.readAsStringSync();
-    return new shelf.Response.ok(fileContent);
+    var allSessions = collection.find({}).toString();
+    return new shelf.Response.ok(allSessions);
   });
 
   /*api.get('/sessions', (shelf.Request request) {
