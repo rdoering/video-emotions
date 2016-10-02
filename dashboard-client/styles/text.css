@@ -1,0 +1,14 @@
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.headline .startAt{
+    font-weight: bold;
+}
+
+.headline{
+    margin: 30px 0 0;
+}
+
+.benchmark{
+    font-size: 130pt;
+}
