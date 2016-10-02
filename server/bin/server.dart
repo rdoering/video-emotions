@@ -12,6 +12,8 @@ import 'package:shelf_route/shelf_route.dart';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:server/db_config.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 void main(List<String> args) {
   var parser = new ArgParser()
@@ -26,6 +28,8 @@ void main(List<String> args) {
 
   Router primaryRouter = router();
   Router api = primaryRouter.child('/api');
+
+  DbConfigValues config = new DbConfigValues();
 
   api.post('/image', (shelf.Request request) async {
 
@@ -53,6 +57,23 @@ void main(List<String> args) {
       msResponseCode = response.statusCode;
     });
 
+    if (msResponseCode == 200) {
+      Db database = new Db(config.dbURI + config.dbName);
+      await database.open();
+      DbCollection collection = new DbCollection(database, config.collectionName);
+
+      var msResponseMap = JSON.decode(msResonse);
+
+      Map entry = {
+        'sessionId': sessionId,
+        'emotionSet': {
+          'emotionsAt': time,
+          'emotions': msResponseMap
+        }
+      };
+      collection.insert(entry);
+    }
+
     return new shelf.Response.ok(msResonse);
   });
 
@@ -63,7 +84,24 @@ void main(List<String> args) {
   });
 
 
-api.get('/sessions', (shelf.Request request) {
+  api.get('/sessions', (shelf.Request request) {
+
+    var path = 'sessions-test.json';
+    Directory pwd = Directory.current;
+    print("PWD: " + pwd.path);
+    File file = new File(path);
+    var fileContent = file.readAsStringSync();
+    return new shelf.Response.ok(fileContent);
+  });
+
+  api.get('/sessions2', (shelf.Request request) {
+
+    DbConfigValues config = new DbConfigValues();
+    Db database = new Db(config.dbURI + config.dbName);
+    database.open();
+    DbCollection collection = new DbCollection(database, config.collectionName);
+    var allSessions = collection.find('{}');
+
 
     var path = 'sessions-test.json';
     Directory pwd = Directory.current;
@@ -73,6 +111,23 @@ api.get('/sessions', (shelf.Request request) {
     var fileContent = file.readAsStringSync();
     return new shelf.Response.ok(fileContent);
   });
+
+  /*api.get('/sessions', (shelf.Request request) {
+
+    DbConfigValues config = new DbConfigValues();
+    Db database = new Db(config.dbURI + config.dbName);
+    await database.open();
+  DbCollection collection = new DbCollection(database, config.collectionName);
+
+
+  var path = 'sessions-test.json';
+    Directory pwd = Directory.current;
+    print("PWD: " + pwd.path);
+    print(path);
+    File file = new File(path);
+    var fileContent = file.readAsStringSync();
+    return new shelf.Response.ok(fileContent);
+  });*/
 
 
   var handler = const shelf.Pipeline()
