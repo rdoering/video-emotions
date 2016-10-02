@@ -59,15 +59,30 @@ function appendSessionHeadline(sessionDivs){
 
 function appendBenchmark(sessionDivs){
     sessionDivs.each(function(sessionData, i){
-        d3.select(this).append("span")
-            .classed("benchmark", true)
-            .text(function(d){
-                /* plot benchmark here! (but maybe calculate somewhere else?) */
-                var hash = text2hashcode(i+JSON.stringify(this));
-                var lastDigitOfHash = hash.toString().slice(-1); //should be a stable but random number between 0-9;
-                return lastDigitOfHash;
-            });
+        var benchmarkIndex = calcBenchmarkIndex(sessionData, i);
+        var benchmarkDiv = d3.select(this).append("div").classed("benchmark", true);
+
+        benchmarkDiv.append("span")
+            .classed("benchmarkIndex", true)
+            .attr("title", "benchmark index: "+benchmarkIndex)
+            .text(benchmarkIndex);
+
+        benchmarkDiv.append("a")
+            .attr("href", "#")
+            .text("start analyzation");
     });
+}
+
+/**
+ * dummy function - yet.
+ * @returns {string}
+ */
+function calcBenchmarkIndex(sessionData, i){
+    console.log("calcBenchmarkIndex", sessionData);
+    /* plot benchmark here! (but maybe calculate somewhere else?) */
+    var hash = text2hashcode(i+JSON.stringify(sessionData));
+    var lastDigitOfHash = hash.toString().slice(-1); //should be a stable but random number between 0-9;
+    return lastDigitOfHash;
 }
 
 function appendSessionChart(sessionDivs){
