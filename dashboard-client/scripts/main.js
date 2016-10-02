@@ -7,7 +7,7 @@ var SCORE_TYPES = ["anger", "contempt", "disgust", "fear", "happiness", "neutral
 var REFRESH_INTERVAL_IN_SECONDS = 5;
 
 /**
- * refresh the whole dashboard
+ * re-init to update charts
  */
 setInterval(init, REFRESH_INTERVAL_IN_SECONDS*1000);
 
