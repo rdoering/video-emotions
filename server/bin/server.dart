@@ -66,12 +66,14 @@ void main(List<String> args) {
 
       Map entry = {
         'sessionId': sessionId,
-        'emotionSet': {
+        'emotionSet': [{
           'emotionsAt': time,
           'emotions': msResponseMap
-        }
+        }]
       };
       collection.insert(entry);
+
+      database.close();
     }
 
     return new shelf.Response.ok(msResonse);
@@ -94,13 +96,23 @@ void main(List<String> args) {
     return new shelf.Response.ok(fileContent);
   });
 
-  api.get('/sessions', (shelf.Request request) {
+  api.get('/sessions', (shelf.Request request) async {
     DbConfigValues config = new DbConfigValues();
     Db database = new Db(config.dbURI + config.dbName);
-    database.open();
+
+    await database.open();
+
     DbCollection collection = new DbCollection(database, config.collectionName);
-    var allSessions = collection.find({}).toString();
-    return new shelf.Response.ok(allSessions);
+
+    var allSessions = await collection.find({}).toList().then((List<Map> maps){
+      return(maps);
+    });
+
+    database.close();
+
+    Map result = {'sessions': allSessions};
+
+    return new shelf.Response.ok(JSON.encode(result));
   });
 
   /*api.get('/sessions', (shelf.Request request) {
